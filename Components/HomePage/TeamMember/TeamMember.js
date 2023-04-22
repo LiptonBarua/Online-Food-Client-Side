@@ -51,7 +51,7 @@ const TeamMember = () => {
         <>
 
 
-            <div className="md:max-w-[92%] py-20 md:mx-auto px-4 md:px-0">
+            <div className="md:max-w-[92%] py-16 md:mx-auto px-4 md:px-0">
                 <div className="text-center text-black mb-8">
                     <p className="font-semibold">Team Member</p>
                     <h1 className="text-4xl font-sans">Meet Our <span className="text-orange-700">Expert Chefs</span></h1>

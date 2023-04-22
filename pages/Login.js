@@ -1,57 +1,75 @@
 import React from 'react';
+import {AiFillGithub} from "react-icons/Ai";
 
 const Login = () => {
-    return (
-        <div>
-            <div className="mb-4 p-0 sm:p-4 md:w-1/3 max-w-2xl"> {/* Card container */}
-      <div className="group h-full border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden shadow-lg">
+  return (
+    <section>
+      <div className='py-24'>
+        <div className="flex w-full max-w-sm mx-auto overflow-hidden shadow-md bg-gradient-to-r from-[#401a14] via-[#340505] to-[#cd450a] rounded-lg shadow-lg  lg:max-w-4xl">
+          <div className="hidden bg-cover lg:block lg:w-1/2" style={{ backgroundImage: `url(https://images.pexels.com/photos/1633578/pexels-photo-1633578.jpeg?cs=srgb&dl=pexels-rajesh-tp-1633578.jpg&fm=jpg)` }}></div>
 
-        {/* :CARD IMAGE & CATEGORY */}
-        <div className="relative w-full overflow-hidden">
-          {/* ::Image */}
-          <img src="https://img.freepik.com/free-photo/chicken-wings-barbecue-sweetly-sour-sauce-picnic-summer-menu-tasty-food-top-view-flat-lay_2829-6471.jpg" alt="" className="w-full h-full object-cover object-center transition-all duration-300 transform group-hover:scale-110"/>
-          {/* ::Category */}
-          <h2 className="absolute top-6 left-6 inline-block pt-0.5 pb-1.5 px-2 rounded-md text-sm text-gray-100 subpixel-antialiased font-medium bg-gradient-to-br from-green-500 to-blue-500 cursor-pointer">Category</h2>
-        </div>
+          <div className="w-full px-6 md:px-8 lg:w-1/2">
+            <div className="w-full max-w-sm p-6 m-auto mx-auto rounded-lg">
+              <div className="flex justify-center mx-auto">
+                <img className="w-auto h-12" src="https://i.ibb.co/wBWmdgV/Navy-Blue-Minimalist-Text-Logo-removebg-preview.png" alt="" />
+              </div>
 
-        {/* :CARD BODY */}
-        <div className="my-6 py-3 px-8 flex flex-col justify-around items-center">
-          {/* ::Title */}
-          <h1 className="title-font text-2xl text-center font-bold text-gray-800 antialiased">Fancy Blog Card 6 you're gonna like !</h1>
-          {/* ::Excerpt */}
-          <p className="line-clamp-8 py-5 overflow-hidden leading-relaxed text-sm text-gray-500 text-left font-medium cursor-pointer">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa, illum cum autem incidunt magni voluptatum alias reiciendis possimus doloremque, enim consequuntur quia. Voluptas exercitationem soluta debitis labore aliquam molestiae illum?</p>
-          {/* ::Read more */}
-          <a href="#link" className="self-start p-2 bg-gradient-to-br from-green-500 to-blue-500 bg-clip-text text-transparent font-medium no-underline transform hover:scale-105">Read more</a>
-        </div>
+              <form className="mt-6">
+                <div>
+                  <label for="username" className="block text-sm text-white dark:text-gray-200">Username</label>
+                  <input type="text" className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border rounded-lg  focus:border-blue-400 dark:focus:border-blue-300 focus:ring-blue-300 focus:outline-none focus:ring focus:ring-opacity-40" />
+                </div>
 
-        {/* ::CARD FOOTER */}
-        <div className="py-3 px-2 flex flex-wrap justify-around border-t border-gray-200">
-          {/* ::Author */}
-          <span className="py-0.5 px-1.5 flex items-center text-xs text-gray-500 font-semibold tracking-wide cursor-pointer">
-            <svg xmlns="http://www.w3.org/2000/svg" className="mr-1 h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
-              <path fillRule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clipRule="evenodd" />
-            </svg>
-            Laetitia
-          </span>
-          {/* ::Date */}
-          <span className="py-0.5 px-1.5 flex items-center text-xs text-gray-500 font-semibold tracking-wide">
-            <svg xmlns="http://www.w3.org/2000/svg" className="mr-1 h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-            </svg>
-            Oct 30, 2021
-          </span>
-          {/* ::Reading time */}
-          <span className="py-0.5 px-1.5 flex items-center text-xs text-gray-500 font-semibold tracking-wide">
-            <svg xmlns="http://www.w3.org/2000/svg" className="mr-1 h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
-              <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clipRule="evenodd" />
-            </svg>
-            3 min read
-          </span>
+                <div className="mt-4">
+                  <div className="flex items-center justify-between">
+                    <label for="password" className="block text-sm text-white dark:text-gray-200">Password</label>
+                    <a href="#" className="text-xs text-white  hover:underline">Forget Password?</a>
+                  </div>
+
+                  <input type="password" className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border rounded-lg  focus:border-blue-400 dark:focus:border-blue-300 focus:ring-blue-300 focus:outline-none focus:ring focus:ring-opacity-40" />
+                </div>
+
+                <div className="mt-6">
+                  <button className="w-full px-6 py-2.5 text-sm font-medium tracking-wide text-white capitalize transition-colors duration-300 transform bg-[#610b0b] rounded-lg hover:bg-[#610b0b] focus:outline-none focus:ring focus:ring-gray-300 focus:ring-opacity-50">
+                    Sign In
+                  </button>
+                </div>
+              </form>
+
+              <div className="flex items-center justify-between mt-4">
+                <span className="w-1/5 border-b dark:border-gray-600 lg:w-1/5"></span>
+
+                <a href="#" className="text-xs text-center text-gray-500 uppercase dark:text-gray-400 hover:underline">
+                  or login with Social Media
+                </a>
+
+                <span className="w-1/5 border-b dark:border-gray-400 lg:w-1/5"></span>
+              </div>
+
+              <div className="flex items-center mt-6 -mx-2">
+                <button type="button" className="flex items-center justify-center w-full px-6 py-2 mx-2 text-sm font-medium text-white transition-colors duration-300 transform bg-[#610b0b] rounded-lg hover:bg-[#610b0b] focus:bg-[#610b0b] focus:outline-none">
+                  <svg className="w-6 h-6 mx-2" viewBox="0 0 40 40">
+                    <path d="M36.3425 16.7358H35V16.6667H20V23.3333H29.4192C28.045 27.2142 24.3525 30 20 30C14.4775 30 10 25.5225 10 20C10 14.4775 14.4775 9.99999 20 9.99999C22.5492 9.99999 24.8683 10.9617 26.6342 12.5325L31.3483 7.81833C28.3717 5.04416 24.39 3.33333 20 3.33333C10.7958 3.33333 3.33335 10.7958 3.33335 20C3.33335 29.2042 10.7958 36.6667 20 36.6667C29.2042 36.6667 36.6667 29.2042 36.6667 20C36.6667 18.8825 36.5517 17.7917 36.3425 16.7358Z" fill="#FFC107" />
+                    <path d="M5.25497 12.2425L10.7308 16.2583C12.2125 12.59 15.8008 9.99999 20 9.99999C22.5491 9.99999 24.8683 10.9617 26.6341 12.5325L31.3483 7.81833C28.3716 5.04416 24.39 3.33333 20 3.33333C13.5983 3.33333 8.04663 6.94749 5.25497 12.2425Z" fill="#FF3D00" />
+                    <path d="M20 36.6667C24.305 36.6667 28.2167 35.0192 31.1742 32.34L26.0159 27.975C24.3425 29.2425 22.2625 30 20 30C15.665 30 11.9842 27.2359 10.5975 23.3784L5.16254 27.5659C7.92087 32.9634 13.5225 36.6667 20 36.6667Z" fill="#4CAF50" />
+                    <path d="M36.3425 16.7358H35V16.6667H20V23.3333H29.4192C28.7592 25.1975 27.56 26.805 26.0133 27.9758C26.0142 27.975 26.015 27.975 26.0158 27.9742L31.1742 32.3392C30.8092 32.6708 36.6667 28.3333 36.6667 20C36.6667 18.8825 36.5517 17.7917 36.3425 16.7358Z" fill="#1976D2" />
+                  </svg>
+
+                  <span className="hidden mx-2 sm:inline">Sign in with Google</span>
+                </button>
+
+                <a href="#" className="p-2 mx-2 text-sm font-medium text-gray-500 transition-colors duration-300 transform bg-gray-300 rounded-lg hover:bg-gray-200">
+                <AiFillGithub className='text-[#320d0d] h-5 w-5'></AiFillGithub>
+                </a>
+              </div>
+
+              <p className="mt-8 text-xs font-light text-center text-gray-400"> Don't have an account? <a href="#" className="font-medium text-gray-700 dark:text-gray-200 hover:underline">Create One</a></p>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-        </div>
-    );
+    </section>
+  );
 };
 
 export default Login;
