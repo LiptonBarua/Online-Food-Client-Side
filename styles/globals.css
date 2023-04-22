@@ -18,10 +18,57 @@
 
 body {
   color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  background: linear-gradient(263deg, rgba(246,195,185,1) 0%, rgba(210,208,208,1) 72%);
+}
+
+/* .........Banner Page........... */
+
+
+.banner{
+  background: url(https://i.ibb.co/jJqhZKP/Black-Photocentric-Professional-Gourmet-Chef-Facebook-Cover.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+.banner::before{
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background: linear-gradient(263deg, rgba(180,59,7,1) 0%, rgba(18,1,1,1) 74%, rgba(13,6,5,1) 95%);
+  opacity: 0.9;
+  
+}
+
+/* .........Team Member........... */
+
+.chefCard:hover{
+  background: rgb(124, 36, 3);
+  color: white;
+  transition: 1.5s;
+  
+}
+
+/* .........Footer Part....... */
+
+.footbanner {
+  background-image: url(https://png.pngtree.com/thumb_back/fh260/back_our/20190619/ourmid/pngtree-western-food-gourmet-poster-background-template-image_135711.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+ 
+}
+
+.footbanner::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background: linear-gradient(263deg, rgba(180,59,7,1) 0%, rgb(0, 0, 0) 74%, rgba(13,6,5,1) 95%);
+  opacity: 0.8;
+  
 }
