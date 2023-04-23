@@ -3,7 +3,7 @@ import { GoogleAuthProvider } from 'firebase/auth';
 import Link from 'next/link';
 import React, { useContext, useState } from 'react';
 import { useForm } from 'react-hook-form';
-import { AiFillGithub } from "react-icons/Ai";
+
 import { toast } from 'react-toastify';
 
 
@@ -160,7 +160,7 @@ const Register = () => {
                                 </button>
 
                                 <a href="#" className="p-2 mx-2 text-sm font-medium text-gray-500 transition-colors duration-300 transform bg-gray-300 rounded-lg hover:bg-gray-200">
-                                    <AiFillGithub className='text-[#320d0d] h-5 w-5'></AiFillGithub>
+                                   
                                 </a>
                             </div>
 

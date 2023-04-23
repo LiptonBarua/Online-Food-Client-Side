@@ -2,7 +2,7 @@ import { AuthContext } from '@/AuthProvider/AuthProvider';
 import Link from 'next/link';
 import React, { useContext } from 'react';
 import { useForm } from 'react-hook-form';
-import { AiFillGithub } from "react-icons/Ai";
+
 import error from './404';
 
 const Login = () => {
@@ -75,7 +75,7 @@ const Login = () => {
                 </button>
 
                 <a href="#" className="p-2 mx-2 text-sm font-medium text-gray-500 transition-colors duration-300 transform bg-gray-300 rounded-lg hover:bg-gray-200">
-                  <AiFillGithub className='text-[#320d0d] h-5 w-5'></AiFillGithub>
+              
                 </a>
               </div>
               <Link href='/Register'><p className="mt-8 text-sm font-light text-center text-[#bdb2b2]">Don't have an account? <span className="font-medium text-[#fe8443] hover:underline">Sign Up</span></p></Link>
