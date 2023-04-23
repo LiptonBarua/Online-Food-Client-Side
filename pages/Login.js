@@ -1,12 +1,30 @@
-import React from 'react';
-import {AiFillGithub} from "react-icons/Ai";
+import { AuthContext } from '@/AuthProvider/AuthProvider';
+import Link from 'next/link';
+import React, { useContext } from 'react';
+import { useForm } from 'react-hook-form';
+import { AiFillGithub } from "react-icons/Ai";
+import error from './404';
 
 const Login = () => {
+  const { register, handleSubmit, formState: { errors } } = useForm();
+  const{user, signIn}=useContext(AuthContext)
+
+  const handleSignIn = (data) => {
+    signIn(data.email, data.password)
+    .then(result=>{
+      const user=result.user;
+      alert('login Successfully')
+    })
+    .catch(error=>{
+      alert('Login is Not a Successfully')
+    })
+  }
+
   return (
     <section>
       <div className='py-24'>
         <div className="flex w-full max-w-sm mx-auto overflow-hidden shadow-md bg-gradient-to-r from-[#401a14] via-[#340505] to-[#cd450a] rounded-lg shadow-lg  lg:max-w-4xl">
-          <div className="hidden bg-cover lg:block lg:w-1/2" style={{ backgroundImage: `url(https://images.pexels.com/photos/1633578/pexels-photo-1633578.jpeg?cs=srgb&dl=pexels-rajesh-tp-1633578.jpg&fm=jpg)` }}></div>
+          <div className="hidden bg-cover lg:block lg:w-1/2" style={{ backgroundImage: `url(https://media.istockphoto.com/id/533712416/photo/cheeseburger-with-drink-of-cola-and-french-fries-red-spotlight.jpg?s=612x612&w=0&k=20&c=L5CCSzIVNwMVocrdqeYhuJtEJhBQy_krZ9v29KNMaAQ=)` }}></div>
 
           <div className="w-full px-6 md:px-8 lg:w-1/2">
             <div className="w-full max-w-sm p-6 m-auto mx-auto rounded-lg">
@@ -14,19 +32,17 @@ const Login = () => {
                 <img className="w-auto h-12" src="https://i.ibb.co/wBWmdgV/Navy-Blue-Minimalist-Text-Logo-removebg-preview.png" alt="" />
               </div>
 
-              <form className="mt-6">
-                <div>
-                  <label for="username" className="block text-sm text-white dark:text-gray-200">Username</label>
-                  <input type="text" className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border rounded-lg  focus:border-blue-400 dark:focus:border-blue-300 focus:ring-blue-300 focus:outline-none focus:ring focus:ring-opacity-40" />
+              <form onSubmit={handleSubmit(handleSignIn)} className="mt-6">
+                <div className="form-control w-full mt-3">
+                  <label for="email" className="block text-sm text-white dark:text-gray-200">Email</label>
+                  <input placeholder='' type="email" {...register("email", { required: "Email is required" })} className="input input-bordered w-full" />
+                  {errors.email && <p className='text-red-600'>{errors.email?.message}</p>}
                 </div>
 
-                <div className="mt-4">
-                  <div className="flex items-center justify-between">
-                    <label for="password" className="block text-sm text-white dark:text-gray-200">Password</label>
-                    <a href="#" className="text-xs text-white  hover:underline">Forget Password?</a>
-                  </div>
-
-                  <input type="password" className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border rounded-lg  focus:border-blue-400 dark:focus:border-blue-300 focus:ring-blue-300 focus:outline-none focus:ring focus:ring-opacity-40" />
+                <div className="form-control w-full mt-3">
+                  <label for="email" className="block text-sm text-white dark:text-gray-200">Password</label>
+                  <input placeholder='' type="password" {...register("password", { required: "Password is required" })} className="input input-bordered w-full" />
+                  {errors.password && <p className='text-red-600'>{errors.password?.message}</p>}
                 </div>
 
                 <div className="mt-6">
@@ -39,7 +55,7 @@ const Login = () => {
               <div className="flex items-center justify-between mt-4">
                 <span className="w-1/5 border-b dark:border-gray-600 lg:w-1/5"></span>
 
-                <a href="#" className="text-xs text-center text-gray-500 uppercase dark:text-gray-400 hover:underline">
+                <a href="#" className="text-xs text-center text-white uppercase dark:text-gray-400 hover:underline">
                   or login with Social Media
                 </a>
 
@@ -59,11 +75,11 @@ const Login = () => {
                 </button>
 
                 <a href="#" className="p-2 mx-2 text-sm font-medium text-gray-500 transition-colors duration-300 transform bg-gray-300 rounded-lg hover:bg-gray-200">
-                <AiFillGithub className='text-[#320d0d] h-5 w-5'></AiFillGithub>
+                  <AiFillGithub className='text-[#320d0d] h-5 w-5'></AiFillGithub>
                 </a>
               </div>
+              <Link href='/Register'><p className="mt-8 text-sm font-light text-center text-[#bdb2b2]">Don't have an account? <span className="font-medium text-[#fe8443] hover:underline">Sign Up</span></p></Link>
 
-              <p className="mt-8 text-xs font-light text-center text-gray-400"> Don't have an account? <a href="#" className="font-medium text-gray-700 dark:text-gray-200 hover:underline">Create One</a></p>
             </div>
           </div>
         </div>

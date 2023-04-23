@@ -9,7 +9,7 @@ const Header = () => {
         <li><Link href='' className='hover:underline underline-offset-4 decoration-2 decoration-white'>Add Product</Link></li>
         <li><Link href='' className='hover:underline underline-offset-4 decoration-2 decoration-white'>My Reviews</Link></li>
         <li><Link href='/Login' className='hover:underline underline-offset-4 decoration-2 decoration-white'>Login</Link></li>
-        <li><Link href='/Register' className='hover:underline underline-offset-4 decoration-2 decoration-white'>Register</Link></li>
+        {/* <li><Link href='/Register' className='hover:underline underline-offset-4 decoration-2 decoration-white'>Register</Link></li> */}
     </>
     return (
             <div className="lg:px-7 shadow-2xl bg-gradient-to-r from-[#0D0605] via-[#120101] to-[#B43B07] navbar fixed top-0 left-0 right-0 z-50">
