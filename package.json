@@ -12,7 +12,7 @@
     "@tanstack/react-query": "^4.29.3",
     "autoprefixer": "10.4.14",
     "daisyui": "^2.51.5",
-    "firebase": "^9.19.1",
+    "firebase": "^9.20.0",
     "next": "13.3.0",
     "postcss": "8.4.21",
     "react": "18.2.0",
