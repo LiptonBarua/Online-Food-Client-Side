@@ -5,13 +5,9 @@ import "swiper/css";
 import "swiper/css/pagination";
 
 import { useContext } from "react";
-import { ShareContext } from "../../../ShareProvider/ShareProvider";
 import { Navigation, Pagination } from "swiper";
-import moment from "moment";
-
-
-
-
+import { ShareContext } from "@/ShareProvider/ShareProvider";
+import moment from "moment/moment";
 
 
 const Testimonails = () => {
@@ -20,7 +16,7 @@ const Testimonails = () => {
 
 
     return (
-        <div id='testimonail' className="px-4 md:px-0 md:max-w-[92%] md:mx-auto py-24">
+        <div id='testimonail' className="px-4 md:px-0 md:max-w-[92%] md:mx-auto pb-24">
             <div className='md:text-center text-black my-10'>
                 <h1 className='text-center font-semibold'>Testimonials</h1>
                 <p className="text-3xl md:text-4xl font-bold">Our Customers <span className='text-orange-700'>Feedback</span></p>

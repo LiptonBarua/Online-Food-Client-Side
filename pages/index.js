@@ -8,7 +8,7 @@ import Subscribe from '@/Components/HomePage/Subscribe/Subscribe'
 import TeamMember from '@/Components/HomePage/TeamMember/TeamMember'
 import Card from '@/Components/HomePage/Card/Card'
 import Practice from '@/Components/HomePage/Practice/Practice'
-// import Testimonails from '@/Components/HomePage/Testimonails/Testimonails'
+import Testimonails from '@/Components/HomePage/Testimonails/Testimonails'
 
 // const inter = Inter({ subsets: ['latin'] })
 
@@ -23,7 +23,7 @@ export default function Home() {
     <Subscribe></Subscribe>
     <Card></Card>
     <TeamMember></TeamMember>
-    {/* <Testimonails></Testimonails> */}
+    <Testimonails></Testimonails>
    </div>
   )
 }

@@ -1,12 +1,17 @@
+
 import { AuthContext } from '@/AuthProvider/AuthProvider';
+import { Protect } from '@/Components/PrivateRoute/PrivateRoute';
 import { ShareContext } from '@/ShareProvider/ShareProvider';
 import React, { useContext, useEffect, useState } from 'react';
 import { FaStar } from 'react-icons/fa';
-// import ReactStars from 'react-stars';
+
+
+
 const serviceId = ({serviceData}) => {
   const{user} =useContext(AuthContext);
-  const{ ratingData}=useContext(ShareContext);
-
+ 
+  const{ ratingData, users}=useContext(ShareContext);
+  console.log(users)
   const [rating, setRating] = useState();
   const [hover, setHover] = useState(0);
 
@@ -41,7 +46,7 @@ const date= new Date()
       const name = user?.displayName;
       const email = user?.email || 'unregister';
       const message = form.message.value;
-      const phote= user?.photoURL;
+      const phote= users[0]?.image;
 
       console.log(name, email, message)
       const order={
@@ -212,5 +217,5 @@ export async function getServerSideProps({params:{id}}) {
   }
 }
 
-export default serviceId;
+export default Protect(serviceId);
 
