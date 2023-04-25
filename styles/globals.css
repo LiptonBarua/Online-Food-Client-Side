@@ -72,3 +72,34 @@ body {
   opacity: 0.8;
   
 }
+
+
+/* .......Service Details................... */
+
+
+.reviewItem{
+  background: linear-gradient(263deg, rgba(246,195,185,1) 0%, rgba(210,208,208,1) 72%);
+}
+.reviewItemFrom{
+  background: rgba(210,208,208,1);
+}
+.reviewItemFrom1{
+  background: linear-gradient(263deg, rgba(246,195,185,1) 0%, rgba(210,208,208,1) 72%);
+}
+
+
+#star{
+  background-color: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+.on {
+  color: #e84b0d;
+ 
+}
+.off {
+  color: #000;
+}
+
+

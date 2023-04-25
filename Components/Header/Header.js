@@ -12,6 +12,7 @@ const Header = () => {
         {/* <li><Link href='/Register' className='hover:underline underline-offset-4 decoration-2 decoration-white'>Register</Link></li> */}
     </>
     return (
+      <nav>
             <div className="lg:px-7 shadow-2xl bg-gradient-to-r from-[#0D0605] via-[#120101] to-[#B43B07] navbar fixed top-0 left-0 right-0 z-50">
       <div className="navbar-start">
 
@@ -65,6 +66,8 @@ const Header = () => {
       </div>
 
     </div>
+
+    </nav>
     );
 };
 

@@ -8,7 +8,7 @@ import Link from 'next/link';
 
 
 const ServicePageDetails = ({item, handleDelete}) => {
-// const{ratingData}=useContext(ShareContext)
+const{ratingData}=useContext(ShareContext)
 
   const[avgStars, setAvgStars]=useState();
   const [hover, setHover] = useState(0);
@@ -17,25 +17,27 @@ const ServicePageDetails = ({item, handleDelete}) => {
 
   
   
-//     const reviews=ratingData.filter(rating=>rating.cardId===item._id)
+    const reviews=ratingData.filter(rating=>rating.cardId===item._id)
   
   
-//    useEffect(() => {
-//     const starsReview = reviews?.map((stars) => stars.rating);
-//     if (starsReview.length > 0) {
-//         const totalReview =
-//             starsReview?.reduce((a, b) => a + b, 0) / starsReview.length;
+   useEffect(() => {
+    const starsReview = reviews?.map((stars) => stars.rating);
+    if (starsReview.length > 0) {
+        const totalReview =
+            starsReview?.reduce((a, b) => a + b, 0) / starsReview.length;
   
-//         setAvgStars(totalReview);
-//     }
-//   }, [reviews]);
+        setAvgStars(totalReview);
+    }
+  }, [reviews]);
+
+
 
 
     return (
       <div>
 
      
-      <div className="relative group h-[550px] border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden shadow-lg">
+      <div className="relative group h-[590px] border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden shadow-lg">
 
         <div className=" overflow-hidden">
 
@@ -53,14 +55,42 @@ const ServicePageDetails = ({item, handleDelete}) => {
         <div className="my-6 py-3 px-6 flex flex-col justify-around">
    
           <h1 className="title-font text-2xl bg-gradient-to-r from-[#401a14] via-[#340505] to-[#cd450a] bg-clip-text text-transparent font-medium no-underline transform font-bold ">{title}</h1>
+          <div className='flex items-center'>
+              <div className="mb-3 flex gap-0.5">
+              {[...Array(5)].map((star, i) => {
+                const ratingValue = i + 1;
 
+                return (
+                  <label key={i}>
+         
+                    <FaStar
+                      className="star"
+                      color={ratingValue <= (hover || avgStars) ? '#ff4d00' : 'gray'}
+                      onMouseEnter={() => setHover(ratingValue)}
+                      onMouseLeave={() => setHover(0)}
+                    />
+                  </label>
+                );
+              })}
+
+            </div>
+            <div className='mb-3 ml-1'>
+            (
+              {
+                  avgStars > 0 ? avgStars.toFixed(1) : 0
+                }
+            )
+            </div>
+
+              
+              </div>
         
           <p className="my-2 text-justify text-neutral-600 dark:text-neutral-200">
               {details.length > 100 ? details.slice(0, 100) + '...' : details}
             </p>
-         
-         <div className='absolute bottom-16 flex justify-between'>
-         <a href="#link" className="py-2 bg-gradient-to-br from-green-500 to-blue-500 bg-clip-text text-transparent font-medium no-underline transform hover:scale-105">Read more</a>
+            
+            <div className='absolute bottom-16 flex justify-between'>
+         <Link href={`/serviceDetails/[id]`} as={`/serviceDetails/${_id}`} className="py-2 bg-gradient-to-br from-green-500 to-blue-500 bg-clip-text text-transparent font-medium no-underline transform hover:scale-105">Read more</Link>
       
          </div>
 
