@@ -1,8 +1,12 @@
-import React from 'react';
+import { ShareContext } from '@/ShareProvider/ShareProvider';
+import React, { useContext } from 'react';
 import { toast } from 'react-toastify';
 
 
 const AddProductCard = () => {
+ const{users}=useContext(ShareContext);
+
+  const date=new Date()
     const handleSubmit=(event)=>{
         event.preventDefault();
         const form=event.target;
@@ -10,12 +14,17 @@ const AddProductCard = () => {
         const details=form.details.value;
         const price=parseInt(form.price.value);
         const img=form.img.value;
-
+        const phote=users[0]?.image;
+        const userName=users[0]?.name
+ 
         const service = { 
           title,
           details,
           price,
-          img
+          img,
+          date,
+          phote,
+          userName
         };
         
      

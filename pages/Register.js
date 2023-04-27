@@ -1,6 +1,7 @@
 import { AuthContext } from '@/AuthProvider/AuthProvider';
 import { GoogleAuthProvider } from 'firebase/auth';
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 import React, { useContext, useState } from 'react';
 import { useForm } from 'react-hook-form';
 
@@ -12,7 +13,7 @@ const Register = () => {
     const [signUpError, setSignUpError] = useState('');
     const [createdUserEmaii, setCreatedUserEmail] = useState('')
     const { register, handleSubmit, formState: { errors } } = useForm();
-
+    const router=useRouter()
 
 
     const date=new Date();
@@ -26,7 +27,7 @@ const Register = () => {
             .then(result=>{
                 const users=result.user;
                 // saveUser(user?.displayName, user?.email);
-                console.log(users)
+                router.replace('/')
                 alert('User Created Successfully')
 
                
@@ -50,7 +51,7 @@ const Register = () => {
                         .then(result => {
                             const user = result.user;
                            alert('User Created Successfully')
-
+                           router.replace('/')
                             const userInfo = {
                                 displayName: data.name,
                                 email: data.email,

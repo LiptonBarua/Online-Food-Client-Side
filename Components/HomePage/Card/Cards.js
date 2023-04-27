@@ -6,6 +6,8 @@ import { useEffect } from 'react';
 import { FaStar } from 'react-icons/fa';
 import Link from 'next/link';
 import { ShareContext } from '@/ShareProvider/ShareProvider';
+import moment from 'moment/moment';
+
 
 const Cards = ({ card }) => {
  const{ratingData}=useContext(ShareContext)
@@ -13,7 +15,7 @@ const Cards = ({ card }) => {
   const [hover, setHover] = useState(0);
 
 
-  const { img, title, price, details, _id } = card;
+  const { img, title, price, details, _id, date, phote, userName} = card;
 
 
 
@@ -99,26 +101,30 @@ const Cards = ({ card }) => {
 
 
         <div className="absolute bottom-0 py-3 flex w-full justify-around border-t border-gray-200">
-
-          <span className="py-0.5 flex items-center text-xs font-semibold tracking-wide cursor-pointer">
+        <span className="py-0.5 flex items-center text-xs font-semibold tracking-wide cursor-pointer">
             <svg xmlns="http://www.w3.org/2000/svg" className=" h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
               <path fillRule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clipRule="evenodd" />
             </svg>
-            Laetitia
+            {
+              userName ? <p className='ml-1'>{userName}</p> : <h1 className='ml-1'>User Name</h1>
+            }
           </span>
 
           <span className="py-0.5 px-1.5 flex items-center text-xs font-semibold tracking-wide">
             <svg xmlns="http://www.w3.org/2000/svg" className="mr-1 h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
             </svg>
-            Oct 30, 2021
+            {moment(date).format('LL')}
           </span>
 
           <span className="py-0.5 px-1.5 flex items-center text-xs font-semibold tracking-wide">
             <svg xmlns="http://www.w3.org/2000/svg" className="mr-1 h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
               <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clipRule="evenodd" />
             </svg>
-            3 min read
+            {
+              date ?  <h1>{moment(date).startOf('hour').fromNow()}</h1> : <h1>No Date</h1>
+            }
+          
           </span>
         </div>
       </div>
