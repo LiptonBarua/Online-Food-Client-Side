@@ -1,3 +1,4 @@
+import { Protect } from '@/Components/PrivateRoute/PrivateRoute';
 import ServicePage from '@/Components/ServicePage/ServicePage';
 import React from 'react';
 
@@ -9,4 +10,4 @@ const Services = () => {
     );
 };
 
-export default Services;
+export default Protect(Services);

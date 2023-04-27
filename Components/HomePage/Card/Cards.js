@@ -90,7 +90,7 @@ const Cards = ({ card }) => {
             </p>
             
             <div className='absolute bottom-16 flex justify-between'>
-         <Link href={`/serviceDetails/[id]`} as={`/serviceDetails/${_id}`} className="py-2 bg-gradient-to-br from-green-500 to-blue-500 bg-clip-text text-transparent font-medium no-underline transform hover:scale-105">Read more</Link>
+         <Link href={`/serviceDetails/[id]`} as={`/serviceDetails/${_id}`} className="py-2 bg-gradient-to-br from-[green] to-[red] bg-clip-text text-transparent font-medium no-underline transform hover:scale-105">Read more</Link>
       
          </div>
 

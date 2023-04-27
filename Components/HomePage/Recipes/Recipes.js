@@ -7,6 +7,7 @@ import "swiper/css/pagination";
 import { Autoplay, Navigation, Pagination } from "swiper";
 import { PhotoProvider, PhotoView } from "react-photo-view";
 import { ShareContext } from "@/ShareProvider/ShareProvider";
+import Link from "next/link";
 // import { Link } from "react-router-dom";
 
 
@@ -59,16 +60,13 @@ const{service}=useContext(ShareContext)
                 
                 className="mySwiper"
             >
-                <div>
+           
+              <div>
                     {
                         service.map((tester, i) => <SwiperSlide key={i}>
-                            <div className="card card-compact py-10">
-                                <PhotoProvider>
-                                    <PhotoView src={tester.img}>
-                                        <figure><img className="rounded-full w-32 h-32 md:w-28 md:h-28" src={tester.img} alt="" /></figure>
-                                    </PhotoView>
-
-                                </PhotoProvider>
+                           <Link href={`/serviceDetails/[id]`} as={`/serviceDetails/${tester._id}`}>
+                           <div className="card card-compact py-10">
+                           <figure><img className="rounded-full w-32 h-32 md:w-28 md:h-28" src={tester.img} alt="" /></figure>
 
                                 <div className=" text-center mt-2">
                                     <h2 className="font-bold">{tester.title}</h2>
@@ -76,6 +74,7 @@ const{service}=useContext(ShareContext)
                                 
                                 </div>
                             </div>
+                           </Link>
                         </SwiperSlide>)
                     }
                 </div>

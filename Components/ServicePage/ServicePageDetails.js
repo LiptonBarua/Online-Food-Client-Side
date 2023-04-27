@@ -7,62 +7,62 @@ import { ShareContext } from '../../ShareProvider/ShareProvider';
 import Link from 'next/link';
 
 
-const ServicePageDetails = ({item, handleDelete}) => {
-const{ratingData}=useContext(ShareContext)
+const ServicePageDetails = ({ item, handleDelete }) => {
+  const { ratingData } = useContext(ShareContext)
 
-  const[avgStars, setAvgStars]=useState();
+  const [avgStars, setAvgStars] = useState();
   const [hover, setHover] = useState(0);
 
-    const {img, title, price, details, _id} = item;
+  const { img, title, price, details, _id } = item;
 
-  
-  
-    const reviews=ratingData.filter(rating=>rating.cardId===item._id)
-  
-  
-   useEffect(() => {
+
+
+  const reviews = ratingData.filter(rating => rating.cardId === item._id)
+
+
+  useEffect(() => {
     const starsReview = reviews?.map((stars) => stars.rating);
     if (starsReview.length > 0) {
-        const totalReview =
-            starsReview?.reduce((a, b) => a + b, 0) / starsReview.length;
-  
-        setAvgStars(totalReview);
+      const totalReview =
+        starsReview?.reduce((a, b) => a + b, 0) / starsReview.length;
+
+      setAvgStars(totalReview);
     }
   }, [reviews]);
 
 
 
 
-    return (
-      <div>
+  return (
+    <div>
 
-     
+
       <div className="relative group h-[590px] border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden shadow-lg">
 
         <div className=" overflow-hidden">
 
           {/* <img src={img} alt="" className="w-full h-full object-cover object-center transition-all duration-300 transform group-hover:scale-110"/> */}
           <PhotoProvider>
-              <PhotoView src={img}>
-              <img src={img} alt="" className="w-full h-72 object-cover object-center transition-all duration-300 transform group-hover:scale-110"/>
-              </PhotoView>
+            <PhotoView src={img}>
+              <img src={img} alt="" className="w-full h-72 object-cover object-center transition-all duration-300 transform group-hover:scale-110" />
+            </PhotoView>
 
-            </PhotoProvider>
-        
+          </PhotoProvider>
+
         </div>
 
-       
+
         <div className="my-6 py-3 px-6 flex flex-col justify-around">
-   
+
           <h1 className="title-font text-2xl bg-gradient-to-r from-[#401a14] via-[#340505] to-[#cd450a] bg-clip-text text-transparent font-medium no-underline transform font-bold ">{title}</h1>
           <div className='flex items-center'>
-              <div className="mb-3 flex gap-0.5">
+            <div className="mb-3 flex gap-0.5">
               {[...Array(5)].map((star, i) => {
                 const ratingValue = i + 1;
 
                 return (
                   <label key={i}>
-         
+
                     <FaStar
                       className="star"
                       color={ratingValue <= (hover || avgStars) ? '#ff4d00' : 'gray'}
@@ -75,26 +75,26 @@ const{ratingData}=useContext(ShareContext)
 
             </div>
             <div className='mb-3 ml-1'>
-            (
+              (
               {
-                  avgStars > 0 ? avgStars.toFixed(1) : 0
-                }
-            )
+                avgStars > 0 ? avgStars.toFixed(1) : 0
+              }
+              )
             </div>
 
-              
-              </div>
-        
-          <p className="my-2 text-justify text-neutral-600 dark:text-neutral-200">
-              {details.length > 100 ? details.slice(0, 100) + '...' : details}
-            </p>
-            
-            <div className='absolute bottom-16 flex justify-between'>
-         <Link href={`/serviceDetails/[id]`} as={`/serviceDetails/${_id}`} className="py-2 bg-gradient-to-br from-green-500 to-blue-500 bg-clip-text text-transparent font-medium no-underline transform hover:scale-105">Read more</Link>
-      
-         </div>
 
-           {/* <Link to={`/service/${_id}`}>  <button type="button" className="mb-3 absolute bottom-0 inline-block rounded bg-gradient-to-r from-[#401a14] via-[#340505] to-[#B43B07] px-6 pt-2.5 pb-2 text-xs font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#3b71ca] transition duration-150 ease-in-out hover:bg-primary-600 hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:bg-primary-600 focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:bg-primary-700 active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)]" data-te-ripple-init data-te-ripple-color="light">Datails</button></Link> */}
+          </div>
+
+          <p className="my-2 text-justify text-neutral-600 dark:text-neutral-200">
+            {details.length > 100 ? details.slice(0, 100) + '...' : details}
+          </p>
+
+          <div className='absolute bottom-16 flex justify-between'>
+            <Link href={`/serviceDetails/[id]`} as={`/serviceDetails/${_id}`} className="py-2 bg-gradient-to-br from-[green] to-[red] bg-clip-text text-transparent font-medium no-underline transform hover:scale-105">Read more</Link>
+
+          </div>
+
+          {/* <Link to={`/service/${_id}`}>  <button type="button" className="mb-3 absolute bottom-0 inline-block rounded bg-gradient-to-r from-[#401a14] via-[#340505] to-[#B43B07] px-6 pt-2.5 pb-2 text-xs font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#3b71ca] transition duration-150 ease-in-out hover:bg-primary-600 hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:bg-primary-600 focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:bg-primary-700 active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)]" data-te-ripple-init data-te-ripple-color="light">Datails</button></Link> */}
         </div>
 
 
@@ -122,10 +122,10 @@ const{ratingData}=useContext(ShareContext)
           </span>
         </div>
       </div>
-   
+
     </div>
 
-    );
+  );
 };
 
 export default ServicePageDetails;

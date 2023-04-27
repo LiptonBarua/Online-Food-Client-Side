@@ -4,16 +4,19 @@ import React, { useContext } from 'react';
 import { useForm } from 'react-hook-form';
 
 import error from './404';
+import { useRouter } from 'next/router';
 
 const Login = () => {
   const { register, handleSubmit, formState: { errors } } = useForm();
-  const{user, signIn}=useContext(AuthContext)
+  const{user, signIn}=useContext(AuthContext);
+  const router=useRouter()
 
   const handleSignIn = (data) => {
     signIn(data.email, data.password)
     .then(result=>{
       const user=result.user;
       alert('login Successfully')
+      router.replace('/')
     })
     .catch(error=>{
       alert('Login is Not a Successfully')

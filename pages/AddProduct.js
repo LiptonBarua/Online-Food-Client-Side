@@ -1,4 +1,5 @@
 import AddProductCard from '@/Components/AddProductCard/AddProductCard';
+import { Protect } from '@/Components/PrivateRoute/PrivateRoute';
 import React from 'react';
 
 const AddProduct = () => {
@@ -9,4 +10,4 @@ const AddProduct = () => {
     );
 };
 
-export default AddProduct;
+export default Protect(AddProduct);

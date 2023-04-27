@@ -18,7 +18,7 @@
 
 body {
   color: rgb(var(--foreground-rgb));
-  background: linear-gradient(263deg, rgb(238, 157, 141) 0%, rgba(210,208,208,1) 72%);
+  background: linear-gradient(263deg, rgba(246,195,185,1) 0%, rgba(210,208,208,1) 72%);
 }
 
 /* .........Banner Page........... */

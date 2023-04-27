@@ -107,7 +107,7 @@ const date= new Date()
     
                 </div>
           
-              <span className="text-gray-600 ml-3">{avgStars >0? avgStars.toFixed(1) : 0} Reviews</span>
+              <span className="text-gray-800 ml-3">{avgStars >0? avgStars.toFixed(1) : 0} Reviews</span>
             </span>
             <span className="flex ml-3 pl-3 py-2 border-l-2 border-[#ff4d00] space-x-2s">
               <a className="text-gray-500">
@@ -170,8 +170,8 @@ const date= new Date()
     <div className="px-4 md:px-0 pt-20 flex flex-col w-full">
         <h2 className="text-2xl text-black font-semibold">Product Description</h2>
     <div className='flex items-center my-3'>
-    <p className='text-black font-bold'>Your Rating: </p>
-    <div className="star-rating">
+    <p className='text-black font-bold text-xl'>Your Rating: </p>
+    <div className="star-rating ml-2 text-xl">
       {[...Array(5)].map((star, index) => {
         index += 1;
         return (
