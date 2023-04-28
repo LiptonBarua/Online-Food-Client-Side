@@ -1,3 +1,4 @@
+import { AuthContext } from '@/AuthProvider/AuthProvider';
 import { ShareContext } from '@/ShareProvider/ShareProvider';
 import React, { useContext } from 'react';
 import { toast } from 'react-toastify';
@@ -5,6 +6,8 @@ import { toast } from 'react-toastify';
 
 const AddProductCard = () => {
  const{users}=useContext(ShareContext);
+const{user}=useContext(AuthContext);
+console.log(user)
 
   const date=new Date()
     const handleSubmit=(event)=>{
@@ -14,8 +17,8 @@ const AddProductCard = () => {
         const details=form.details.value;
         const price=parseInt(form.price.value);
         const img=form.img.value;
-        const phote=users[0]?.image;
-        const userName=users[0]?.name
+        const phote=user?.image;
+        const userName=user?.displayName
  
         const service = { 
           title,
@@ -40,7 +43,7 @@ const AddProductCard = () => {
           alert('Product Add Successfully')
             form.reset();
            
-            console.log(data)})
+        })
        
     }
     return (

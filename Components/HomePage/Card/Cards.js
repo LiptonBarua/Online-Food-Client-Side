@@ -39,7 +39,7 @@ const Cards = ({ card }) => {
     <div>
 
      
-      <div className="relative group h-[590px] border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden shadow-lg">
+      <div className="relative group h-[610px] border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden shadow-lg">
 
         <div className=" overflow-hidden">
 
@@ -84,9 +84,9 @@ const Cards = ({ card }) => {
             )
             </div>
 
-              
-              </div>
         
+              </div>
+              <h1 className='font-semibold text-xl'>${price}</h1>
           <p className="my-2 text-justify text-neutral-600 dark:text-neutral-200">
               {details.length > 100 ? details.slice(0, 100) + '...' : details}
             </p>
@@ -106,7 +106,7 @@ const Cards = ({ card }) => {
               <path fillRule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clipRule="evenodd" />
             </svg>
             {
-              userName ? <p className='ml-1'>{userName}</p> : <h1 className='ml-1'>User Name</h1>
+              userName ? <p className='ml-1'>{userName}</p> : <h1 className='ml-1'>User</h1>
             }
           </span>
 
