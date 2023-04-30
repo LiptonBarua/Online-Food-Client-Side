@@ -10,8 +10,8 @@ import { FaStar } from 'react-icons/fa';
 const serviceId = ({serviceData}) => {
   const{user} =useContext(AuthContext);
  
-  const{ ratingData, users}=useContext(ShareContext);
-  console.log(users)
+  const{ ratingData, users, refetch, userProfile}=useContext(ShareContext);
+
   const [rating, setRating] = useState();
   const [hover, setHover] = useState(0);
 
@@ -46,9 +46,7 @@ const date= new Date()
       const name = user?.displayName;
       const email = user?.email || 'unregister';
       const message = form.message.value;
-      const phote= user.image;
-
-      console.log(name, email, message)
+      const phote= userProfile[0].image;
       const order={
         name,
         email,
@@ -71,6 +69,7 @@ const date= new Date()
       if(data.acknowledged){
         alert('Review Submitted successfully!')
         form.reset();
+        refetch()
       }
      
     })

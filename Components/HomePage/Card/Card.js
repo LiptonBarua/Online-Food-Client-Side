@@ -8,7 +8,7 @@ const Card = () => {
   const { service } = useContext(ShareContext);
 
   const [total, setTotal] = useState("")
-  const [page, setPage] = useState(2)
+  const [page, setPage] = useState(1)
   const [postPerPage, setPostPerPage] = useState(3);
 
 

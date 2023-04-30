@@ -12,7 +12,7 @@ import moment from "moment/moment";
 
 const Testimonails = () => {
     const { ratingData } = useContext(ShareContext);
-    console.log(ratingData)
+
 
 
     return (

@@ -8,7 +8,6 @@ const Review = () => {
     const {user} = useContext(AuthContext);
     const{review,  setReview}=useContext(ShareContext)
 
-    console.log(review)
 
  
 
@@ -20,7 +19,7 @@ const Review = () => {
            })
            .then(res=>res.json())
            .then(data=>{
-               console.log(data)
+             
                if(data.deletedCount){
                 alert('deleted successfully');
                 const remaining =review.filter(ods=>ods._id!==id);

@@ -46,7 +46,7 @@ const Register = () => {
             .then(res => res.json())
             .then(imageData => {
                 if (imageData.success) {
-                    console.log(imageData)
+                    
                     createUser(data.email, data.password)
                         .then(result => {
                             const user = result.user;
@@ -57,7 +57,7 @@ const Register = () => {
                                 email: data.email,
                                 image: imageData.data.uri
                             }
-                            console.log(userInfo)
+                           
                             updateUser(userInfo)
                                 .then(() => {
                                     saveUser(data.name, data.email, imageData.data.url);
@@ -87,7 +87,7 @@ const Register = () => {
                         .then(res => res.json())
                         .then(data => {
                             setCreatedUserEmail(email);
-                            console.log(data)
+                           
                         })
                 }
             })
