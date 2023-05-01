@@ -13,8 +13,6 @@ import moment from "moment/moment";
 const Testimonails = () => {
     const { ratingData } = useContext(ShareContext);
 
-
-
     return (
         <div id='testimonail' className="px-4 md:px-0 md:max-w-[92%] md:mx-auto pb-24">
             <div className='md:text-center text-black my-10'>
@@ -67,7 +65,7 @@ const Testimonails = () => {
                                                 <a className="inline-flex items-center">
 
                                                     {
-                                                        tester?.phote ? <img alt="testimonial" src={tester?.phote} className="w-12 h-12 rounded-full flex-shrink-0 object-cover object-center" /> : <img alt="testimonial" src="https://media.istockphoto.com/id/1311315541/photo/headshot-portrait-of-smiling-businessman-posing-in-office.jpg?s=170667a&w=0&k=20&c=r7s-FSwf6caTo3W2TnjCeujMzWRYkwu3_uUt2QYaNTc=" className="w-12 h-12 rounded-full flex-shrink-0 object-cover object-center" />
+                                                        tester?.phote ? <img alt="testimonial" src={tester?.phote} className="w-9 h-9 rounded-full flex-shrink-0 object-cover object-center" /> : <img alt="testimonial" src="https://media.istockphoto.com/id/1311315541/photo/headshot-portrait-of-smiling-businessman-posing-in-office.jpg?s=170667a&w=0&k=20&c=r7s-FSwf6caTo3W2TnjCeujMzWRYkwu3_uUt2QYaNTc=" className="w-12 h-12 rounded-full flex-shrink-0 object-cover object-center" />
                                                     }
 
                                                     <span className="flex-grow flex flex-col pl-4">

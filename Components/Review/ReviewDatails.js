@@ -17,36 +17,6 @@ const ReviewDetails = ({review, handleDelete}) => {
 
     return (
        
-//       <div className="divide-y flex py-4 md:py-8">
-      
-//       <div className="flex flex-col gap-3">
-
-
-//         <div className="flex flex-col gap-3 bg-slate-500">
-//             <div>
-//              <div className='flex justify-between items-center '>
-//              
-
-//              </div>
-//               <span className="block text-sm text-gray-500">{moment(date).format('LL')}</span>
-//             </div>
-
-//             <div className='flex justify-between items-center'>
-// <div>
-  
-
-// </div>
-            
-            
-//           </div>
-//         <div>
-     
-//     </div>
-
-//         </div>
-//         </div>
-     
-//       </div>
       
 <div className='flex justify-between my-20'>
     <div>

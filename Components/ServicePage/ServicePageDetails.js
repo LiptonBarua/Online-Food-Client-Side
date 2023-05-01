@@ -104,8 +104,9 @@ const ServicePageDetails = ({ item, handleDelete }) => {
               <path fillRule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clipRule="evenodd" />
             </svg> */}
 
-            <img alt="" className="w-7 h-7 border rounded-full dark:bg-gray-500 dark:border-gray-700" src={phote} />
-
+            {
+              phote ? <img alt="" className="w-7 h-7 border rounded-full dark:bg-gray-500 dark:border-gray-700" src={phote} /> : <img alt="" className="w-7 h-7 border rounded-full dark:bg-gray-500 dark:border-gray-700" src='https://media.istockphoto.com/id/1311315541/photo/headshot-portrait-of-smiling-businessman-posing-in-office.jpg?s=170667a&w=0&k=20&c=r7s-FSwf6caTo3W2TnjCeujMzWRYkwu3_uUt2QYaNTc=' />
+            }
             {
               userName ? <p className='ml-1'>{userName}</p> : <h1 className='ml-1'>User Name</h1>
             }

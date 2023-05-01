@@ -23,7 +23,7 @@ const ShareProvider = ({ children }) => {
   //  .........User Profile Data Load...................
 
   const{data: userProfile=[]}=useQuery({
-    queryKey: ['profileData'],
+    queryKey: ['profileData', user?.email],
     queryFn: async()=>{
       const res=await fetch(`https://assiament-server.vercel.app/profile?email=${user?.email}`)
       const data=res.json();

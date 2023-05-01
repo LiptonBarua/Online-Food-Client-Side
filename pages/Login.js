@@ -15,7 +15,7 @@ const Login = () => {
     signIn(data.email, data.password)
     .then(result=>{
       const user=result.user;
-      alert('login Successfully')
+      // alert('login Successfully')
       router.replace('/')
     })
     .catch(error=>{

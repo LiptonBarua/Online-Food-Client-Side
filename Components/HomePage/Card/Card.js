@@ -30,6 +30,21 @@ const Card = () => {
     return originalElement;
   }
 
+  // const handleDeleteService=(id)=>{
+  //   fetch(`http://localhost:5000/service/${id}`,{
+  //     method: 'DELETE',
+  //   })
+  //   .then(res=>res.json())
+  //   .then(data=>{
+  //     if(data.deletedCount>0){
+  //     alert('delete successfully')
+  //     }
+      
+  //   })
+  //   .catch(error=>{
+  //     alert('delete error')
+  //   })
+  // }
   return (
     <div>
       <div className='md:max-w-[92%] md:mx-auto mx-3 py-20'>
