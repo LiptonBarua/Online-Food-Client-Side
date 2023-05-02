@@ -68,9 +68,10 @@ const Nav = () => {
                 )}
               </>
             )}
+
             {dropDown && (
               <ul
-                className="lg:absolute lg:top-[52px] -z-10 lg:-right-10 menu ul lg:bg-gradient-to-r from-[#6c2506] via-[#ac3806] to-[#B43B07] dropdown-content menu items-center shadow w-64 px-auto lg:w-36 justify-center" 
+                className="lg:absolute  lg:top-[52px]  lg:-right-12 menu ul lg:bg-gradient-to-r from-[#6c2506] via-[#ac3806] to-[#B43B07] lg:dark:bg-black  lg:backdrop-filter  lg:shadow-md items-center justify-center lg:z-50 lg:w-36 lg:py-2 lg:px-5" 
                 onClick={() => {
                   setDropDown(!dropDown);
                   setNavbar(!navbar);
