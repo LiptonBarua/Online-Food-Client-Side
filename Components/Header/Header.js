@@ -1,6 +1,5 @@
 
 import { useState, useEffect, useContext } from "react";
-import { FaUserAlt } from "react-icons/fa";
 import { AuthContext } from "@/AuthProvider/AuthProvider";
 import { ShareContext } from "@/ShareProvider/ShareProvider";
 import Link from "next/link";
@@ -22,6 +21,7 @@ const Nav = () => {
   const dropDownItems = (
     <>
       <li><Link href='/Profile' className='hover:underline underline-offset-4 decoration-2 decoration-white'>Profile</Link></li>
+      <li onClick={handleLogOut}><Link href='' className='hover:underline underline-offset-4 decoration-2 decoration-white'>Log Out</Link></li>
     </>
   );
 
@@ -37,7 +37,7 @@ const Nav = () => {
         <>
           <li><Link href='/AddProduct' className='hover:underline underline-offset-4 decoration-2 decoration-white'>Add Product</Link></li>
           <li><Link href='/MyReview' className='hover:underline underline-offset-4 decoration-2 decoration-white'>My Reviews</Link></li>
-          <li onClick={handleLogOut}><Link href='' className='hover:underline underline-offset-4 decoration-2 decoration-white'>Sign Out</Link></li>
+        
 
           <div className="grid items-center justify-center justify-items-center relative">
             {userProfile[0]?.image ? (
@@ -59,16 +59,18 @@ const Nav = () => {
                     alt="user"
                   />
                 ) : (
-                  <FaUserAlt
-                    onClick={() => setDropDown(!dropDown)}
-                    className="w-10 rounded-full"
-                  />
+                  <img
+                  onClick={() => setDropDown(!dropDown)}
+                  className="w-8 h-8 rounded-full items-center justify-center"
+                  src='https://creazilla-store.fra1.digitaloceanspaces.com/icons/7913955/business-man-icon-md.png'
+                  alt="user"
+                />
                 )}
               </>
             )}
             {dropDown && (
               <ul
-                className="lg:absolute lg:top-[52px] -z-10 lg:-right-10 menu ul lg:bg-gradient-to-r from-[#6c2506] via-[#ac3806] to-[#B43B07] dropdown-content menu pr-5 items-center shadow w-20 lg:w-36 justify-center" 
+                className="lg:absolute lg:top-[52px] -z-10 lg:-right-10 menu ul lg:bg-gradient-to-r from-[#6c2506] via-[#ac3806] to-[#B43B07] dropdown-content menu items-center shadow w-64 px-auto lg:w-36 justify-center" 
                 onClick={() => {
                   setDropDown(!dropDown);
                   setNavbar(!navbar);

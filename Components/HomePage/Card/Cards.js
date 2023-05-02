@@ -13,9 +13,10 @@ const Cards = ({card}) => {
   const { ratingData } = useContext(ShareContext)
   const [avgStars, setAvgStars] = useState();
   const [hover, setHover] = useState(0);
+  const [isReadMore, setIsReadMore] = useState(true);
+  const toggleReadMore = () => {setIsReadMore(!isReadMore)};
 
-
-  const { img, title, price, details, _id, date, phote, userName } = card;
+  const { img, title, price, details, _id, date, phote, userName} = card;
 
 
 
@@ -91,6 +92,7 @@ const Cards = ({card}) => {
             {details.length > 100 ? details.slice(0, 100) + '...' : details}
           </p>
 
+
           <div className='absolute bottom-16 flex justify-between'>
             <Link href={`/serviceDetails/[id]`} as={`/serviceDetails/${_id}`} className="py-2 bg-gradient-to-br from-[green] to-[red] bg-clip-text text-transparent font-medium no-underline transform hover:scale-105">Read more</Link>
 
@@ -102,13 +104,13 @@ const Cards = ({card}) => {
 
         <div className="absolute bottom-0 py-3 flex w-full justify-around border-t border-gray-200">
         <span className="py-0.5 flex items-center text-xs font-semibold tracking-wide cursor-pointer">
-            {/* <svg xmlns="http://www.w3.org/2000/svg" className=" h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
+            <svg xmlns="http://www.w3.org/2000/svg" className=" h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
               <path fillRule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clipRule="evenodd" />
-            </svg> */}
+            </svg>
 
-            {
+            {/* {
               phote ? <img alt="" className="w-7 h-7 border rounded-full dark:bg-gray-500 dark:border-gray-700" src={phote} /> : <img alt="" className="w-7 h-7 border rounded-full dark:bg-gray-500 dark:border-gray-700" src='https://media.istockphoto.com/id/1311315541/photo/headshot-portrait-of-smiling-businessman-posing-in-office.jpg?s=170667a&w=0&k=20&c=r7s-FSwf6caTo3W2TnjCeujMzWRYkwu3_uUt2QYaNTc=' />
-            }
+            } */}
             {
               userName ? <p className='ml-1'>{userName}</p> : <h1 className='ml-1'>User Name</h1>
             }

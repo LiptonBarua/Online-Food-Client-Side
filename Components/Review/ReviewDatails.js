@@ -7,9 +7,9 @@ const ReviewDetails = ({review, handleDelete}) => {
   const [ratinger, setRating] = useState(review.rating);
   const [hover, setHover] = useState(0);
 
-  const handleRatingChange = (newRating) => {
-    setRating(newRating);
-  };
+  // const handleRatingChange = (newRating) => {
+  //   setRating(newRating);
+  // };
 
     const {_id,name,date, rating, serviceName,price, customer, phone, service, message, phote} =review;
   
@@ -22,6 +22,7 @@ const ReviewDetails = ({review, handleDelete}) => {
     <div>
     <h1 className="block text-sm font-bold">{name}</h1>
     <span className="block text-sm text-gray-500">{moment(date).format('LL')}</span>
+    <div className='flex items-center'>
     <div className="-ml-1 flex gap-0.5">
             {[...Array(5)].map((star, i) => {
         const ratingValue = i + 1;
@@ -39,7 +40,9 @@ const ReviewDetails = ({review, handleDelete}) => {
         );
       })}
      
-            </div>
+         </div>
+    <span className="text-gray-800 ml-3">{rating > 0 ? rating.toFixed(1) : 0} Reviews</span>
+    </div>
 
             <p className="text-gray-600 text-justify mt-4">{message}</p>
     </div>

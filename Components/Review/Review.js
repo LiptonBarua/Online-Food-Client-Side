@@ -31,7 +31,7 @@ const Review = () => {
     return (
 <div className="py-6 sm:py-8 lg:py-24">
   <div className="mx-auto max-w-screen-md px-4 md:px-8">
-    <h2 className="mb-4 text-center text-2xl font-bold text-black md:mb-8 lg:text-3xl xl:mb-12">Customer Reviews</h2>
+    <h2 className="mb-4 text-center text-2xl font-bold text-black md:mb-8 lg:text-3xl xl:mb-12">My Reviews</h2>
 
     <div className="mb-4 flex items-center justify-between border-t border-b py-4">
       <div className="flex flex-col gap-0.5">

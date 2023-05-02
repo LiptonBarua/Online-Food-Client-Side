@@ -22,7 +22,7 @@ const ShareProvider = ({ children }) => {
 
   //  .........User Profile Data Load...................
 
-  const{data: userProfile=[]}=useQuery({
+  const{data: userProfile=[], refetch:profileFetch}=useQuery({
     queryKey: ['profileData', user?.email],
     queryFn: async()=>{
       const res=await fetch(`https://assiament-server.vercel.app/profile?email=${user?.email}`)
@@ -43,7 +43,16 @@ const ShareProvider = ({ children }) => {
       }
     })
 
+// .........Personal Card Data Load..................
 
+const{data:cards=[]}=useQuery({
+  queryKey: ['cardsData', user?.email],
+  queryFn: async()=>{
+      const res= await fetch(`https://assiament-server.vercel.app/cards?email=${user?.email}`)
+      const data=await res.json()
+      return data;
+  }
+})
 
 // ...........rating data load...................
 
@@ -58,7 +67,9 @@ const ShareProvider = ({ children }) => {
       })
       
 
-      
+    //  ...........Review Data Load.....................
+    
+    
    useEffect(()=>{
     if(user?.email){
         fetch(`https://assiament-server.vercel.app/myReview?email=${user?.email}`,{
@@ -71,7 +82,7 @@ const ShareProvider = ({ children }) => {
     }
     }, [user?.email])
 
-    const shareInfo = {review,  setReview, service, ratingData, users, refetch, serviceLoad, userProfile}
+    const shareInfo = {review,  setReview, service, ratingData, users, refetch, serviceLoad, userProfile, cards, profileFetch}
     return (
         <ShareContext.Provider value={shareInfo}>
             {children}

@@ -10,11 +10,13 @@ import ReactStars from 'react-stars';
 
 const serviceId = ({ serviceData }) => {
   const { user } = useContext(AuthContext);
-
   const { ratingData, users, refetch, userProfile } = useContext(ShareContext);
-
   const [rating, setRating] = useState();
   const [hover, setHover] = useState(0);
+  const [isReadMore, setIsReadMore] = useState(true);
+  const toggleReadMore = () => { setIsReadMore(!isReadMore) };
+
+
 
   const [avgStars, setAvgStars] = useState();
 
@@ -53,8 +55,12 @@ const serviceId = ({ serviceData }) => {
       email,
       message,
       phote,
+      price,
+      img,
+      userEmail: serviceData?.email,
       rating,
       date,
+      title,
       cardId: _id
     }
 
@@ -127,7 +133,17 @@ const serviceId = ({ serviceData }) => {
                   </a>
                 </span>
               </div>
-              <p className=" text-justify">{details}</p>
+              {/* <p className=" text-justify">{details}</p> */}
+
+              <p className=' text-justify'>
+                {isReadMore ? details.slice(0, 400) : details}
+
+                {details.length > 400 &&
+                  <span onClick={toggleReadMore} className="text-[#ff4d00] font-semibold">
+                    {isReadMore ? '...Read more' : ' ...Show less'}
+                  </span>
+                }
+              </p>
               <div className="flex mt-6 items-center pb-5 border-b-2 border-[#ff4d00] mb-5">
                 <div className="flex">
                   <span className="mr-3">Color</span>
@@ -185,10 +201,7 @@ const serviceId = ({ serviceData }) => {
           </div>
           <form action="" onSubmit={handleReview}>
             <textarea rows="6" required name='message' placeholder="Write a Message..." className="border border-gray-400 p-4 w-full reviewItem rounded-md resize-none"></textarea>
-            {/* <div className='grid grid-cols-1 md:grid-cols-2 gap-5 my-4'>
-      <input type="text" name='name' placeholder="Your Name" required="" className="reviewItemFrom block border border-gray-400 w-full p-2 rounded focus:outline-none focus:ring focus:ring-opacity-25 focus:ring-violet-400 dark:bg-gray-800" />
-      <input  type="email" name='email' placeholder="Your Email" required="" className="reviewItemFrom1 border border-gray-400 bg-outline block w-full p-2 rounded focus:outline-none focus:ring focus:ring-opacity-25 focus:ring-violet-400 dark:bg-gray-800" />
-      </div> */}
+
             <button type='submit' className="relative inline-flex items-center justify-start px-6 py-3 overflow-hidden font-medium transition-all bg-black text-white rounded hover:bg-black group">
               <span className="w-48 h-48 rounded rotate-[-40deg] bg-gradient-to-r from-[#401a14] via-[#340505] to-[#B43B07] absolute bottom-0 left-0 -translate-x-full ease-out duration-500 transition-all translate-y-full mb-9 ml-9 group-hover:ml-0 group-hover:mb-32 group-hover:translate-x-0"></span>
               <span className="relative w-full text-left text-white transition-colors duration-300 ease-in-out group-hover:text-white">Post Review</span>

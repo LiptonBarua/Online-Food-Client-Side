@@ -1,4 +1,5 @@
 import MyProfile from '@/Components/MyProfile/MyProfile';
+import { Protect } from '@/Components/PrivateRoute/PrivateRoute';
 import React from 'react';
 
 const Profile = () => {
@@ -9,4 +10,4 @@ const Profile = () => {
     );
 };
 
-export default Profile;
+export default Protect(Profile);
