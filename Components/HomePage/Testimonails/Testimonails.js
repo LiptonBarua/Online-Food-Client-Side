@@ -71,7 +71,7 @@ const Testimonails = () => {
 
                                                     {tester.message.length > 180 &&
                                                         <span onClick={toggleReadMore} className="text-info">
-                                                            {isReadMore ? '...read more' : ' ...show less'}
+                                                            {isReadMore ? '...Read more' : ' ...Show less'}
                                                         </span>
                                                     }
                                                 </p>

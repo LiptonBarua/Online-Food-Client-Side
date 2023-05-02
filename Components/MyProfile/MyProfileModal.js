@@ -78,7 +78,7 @@ const MyProfileModal = () => {
                         </div>
                         <div className="form-control w-full my-4">
                            
-                            <input placeholder='Education' type="text" {...register("education", { required: "Education is required" })} className="input input-bordered w-full" />
+                            <input placeholder='About' type="text" {...register("education", { required: "Education is required" })} className="input input-bordered w-full" />
                             {errors.education && <p className='text-red-600'>{errors.education?.message}</p>}
                         </div>
                        <div className='flex justify-center'>

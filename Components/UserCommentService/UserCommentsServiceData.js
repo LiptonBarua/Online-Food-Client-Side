@@ -5,10 +5,13 @@ import { FaStar } from 'react-icons/fa';
 const UserCommentsServiceData = ({comment}) => {
     const [ratinger, setRating] = useState(comment?.rating);
     const [hover, setHover] = useState(0);
+    const [isReadMore, setIsReadMore] = useState(true);
+    const toggleReadMore = () => { setIsReadMore(!isReadMore) };
 
-     const{name, email, message, phote, userEmail, date, rating}=comment;
+    
+     const{name, email, message, phote, userEmail, date, rating, title, price}=comment;
     return (
-        <div className="flex items-start">
+        <div className="flex items-start my-20">
         <div className="flex-shrink-0">
           <div className="inline-block relative">
             <div className="relative w-16 h-16 rounded-full overflow-hidden">
@@ -48,8 +51,17 @@ const UserCommentsServiceData = ({comment}) => {
     <span className="text-gray-800 ml-3">{rating > 0 ? rating.toFixed(1) : 0} Reviews</span>
     </div>
           <div className="mt-3">
-            <span className="font-bold">Sapien consequat eleifend!</span>
-            <p className="mt-1 text-justify">{message}</p>
+            <span className="font-bold">{title}</span>
+            <p className='text-justify text-gray-600'>
+            {isReadMore ? message.slice(0, 200) : message}
+
+            {message.length > 200 &&
+              <span onClick={toggleReadMore} className="text-[#020602] font-semibold">
+                {isReadMore ? '...Read more' : ' ...Show less'}
+              </span>
+            }
+          </p>
+          
           </div>
  
         </div>

@@ -20,7 +20,7 @@ const Nav = () => {
 
   const dropDownItems = (
     <>
-      <li><Link href='/Profile' className='hover:underline underline-offset-4 decoration-2 decoration-white'>Profile</Link></li>
+      <li ><Link href='/Profile' className='hover:underline underline-offset-4 decoration-2 decoration-white'>Profile</Link></li>
       <li onClick={handleLogOut}><Link href='' className='hover:underline underline-offset-4 decoration-2 decoration-white'>Log Out</Link></li>
     </>
   );
