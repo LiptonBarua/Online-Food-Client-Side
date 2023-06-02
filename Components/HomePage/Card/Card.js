@@ -30,26 +30,13 @@ const Card = () => {
     return originalElement;
   }
 
-  // const handleDeleteService=(id)=>{
-  //   fetch(`http://localhost:5000/service/${id}`,{
-  //     method: 'DELETE',
-  //   })
-  //   .then(res=>res.json())
-  //   .then(data=>{
-  //     if(data.deletedCount>0){
-  //     alert('delete successfully')
-  //     }
-      
-  //   })
-  //   .catch(error=>{
-  //     alert('delete error')
-  //   })
-  // }
+
   return (
     <div>
       <div className='md:max-w-[92%] md:mx-auto mx-3 py-20'>
-        <div className='text-center'>
-          <h1 className='text-3xl font-bold text-orange-700'>Top Collections</h1>
+        <div className='container mx-auto max-w-3xl text-center '>
+          <h1 className='text-3xl lg:text-4xl font-bold text-black'>Our Special Menu</h1>
+          <p className='mt-3'>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolorem amet exercitationem enim voluptatem, quod cumque alias ullam. Harum, tempora et?</p>
         </div>
 
         <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 my-10'>

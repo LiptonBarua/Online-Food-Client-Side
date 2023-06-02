@@ -20,7 +20,7 @@ const Testimonails = () => {
         <div id='testimonail' className="px-4 md:px-0 md:max-w-[92%] md:mx-auto pb-24">
             <div className='md:text-center text-black my-10'>
                 <h1 className='text-center font-semibold'>Testimonials</h1>
-                <p className="text-3xl md:text-4xl font-bold">Our Customers <span className='text-orange-700'>Feedback</span></p>
+                <p className="text-3xl md:text-4xl font-bold">Food Lovers <span className='text-orange-700'>Feedback</span></p>
             </div>
             <section className="text-gray-600 body-font">
                 <div className="">

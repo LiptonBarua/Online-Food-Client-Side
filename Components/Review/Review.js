@@ -6,7 +6,7 @@ import { ShareContext } from "@/ShareProvider/ShareProvider";
 
 const Review = () => {
     const {user} = useContext(AuthContext);
-    const{review,  setReview}=useContext(ShareContext)
+    const{review}=useContext(ShareContext)
 
 
  
@@ -23,7 +23,7 @@ const Review = () => {
                if(data.deletedCount){
                 alert('deleted successfully');
                 const remaining =review.filter(ods=>ods._id!==id);
-               setReview(remaining);
+           
                }
            })
           }

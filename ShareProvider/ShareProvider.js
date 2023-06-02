@@ -6,8 +6,6 @@ import React, { createContext, useContext, useEffect, useState } from 'react';
 export const ShareContext = createContext()
 
 const ShareProvider = ({ children }) => {
-    // const [ratingData, setRatingData] = useState([]);
-    const[review, setReview] = useState([]);
     const[users, setUsers]=useState([])
     const{user}=useContext(AuthContext)
 
@@ -45,7 +43,7 @@ const ShareProvider = ({ children }) => {
 
 // .........Personal Card Data Load..................
 
-const{data:cards=[]}=useQuery({
+const{data:cards=[], refetch:cardRefetch}=useQuery({
   queryKey: ['cardsData', user?.email],
   queryFn: async()=>{
       const res= await fetch(`https://assiament-server.vercel.app/cards?email=${user?.email}`)
@@ -70,19 +68,19 @@ const{data:cards=[]}=useQuery({
     //  ...........Review Data Load.....................
     
     
-   useEffect(()=>{
-    if(user?.email){
-        fetch(`https://assiament-server.vercel.app/myReview?email=${user?.email}`,{
-          headers:{
-            authorization: `Bearer ${localStorage.getItem('assianment')}`
-          }
-        })
-        .then(res=>res.json())
-        .then(data=>setReview(data))
-    }
-    }, [user?.email])
 
-    const shareInfo = {review,  setReview, service, ratingData, users, refetch, serviceLoad, userProfile, cards, profileFetch}
+
+
+    const{data:review=[], refetch:reviewRefetch}=useQuery({
+      queryKey: ['reviewData', user?.email],
+      queryFn: async()=>{
+        const res=await fetch(`https://assiament-server.vercel.app/myReview?email=${user?.email}`)
+        const data=res.json()
+        return data;
+      }
+    })
+
+    const shareInfo = {review, reviewRefetch, service, ratingData, users, refetch, serviceLoad, userProfile, cards, profileFetch, cardRefetch}
     return (
         <ShareContext.Provider value={shareInfo}>
             {children}

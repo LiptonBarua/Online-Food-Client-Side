@@ -5,7 +5,7 @@ import { toast } from 'react-toastify';
 
 
 const AddProductCard = () => {
-  const { users, serviceLoad, userProfile } = useContext(ShareContext);
+  const { users, serviceLoad, userProfile, cardRefetch} = useContext(ShareContext);
   console.log(userProfile[0]?.image)
   const { user } = useContext(AuthContext);
 
@@ -42,8 +42,9 @@ const AddProductCard = () => {
       .then(res => res.json())
       .then(data => {
         alert('Product Add Successfully')
+        serviceLoad();
+        cardRefetch()
         form.reset();
-        serviceLoad()
       })
 
   }

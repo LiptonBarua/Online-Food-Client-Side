@@ -10,7 +10,7 @@ import ReactStars from 'react-stars';
 
 const serviceId = ({ serviceData }) => {
   const { user } = useContext(AuthContext);
-  const { ratingData, users, refetch, userProfile } = useContext(ShareContext);
+  const { ratingData, users, refetch, userProfile,reviewRefetch } = useContext(ShareContext);
   const [rating, setRating] = useState();
   const [hover, setHover] = useState(0);
   const [isReadMore, setIsReadMore] = useState(true);
@@ -75,8 +75,10 @@ const serviceId = ({ serviceData }) => {
       .then(data => {
         if (data.acknowledged) {
           alert('Review Submitted successfully!')
+          refetch();
+          reviewRefetch()
           form.reset();
-          refetch()
+          
         }
 
       })

@@ -41,7 +41,7 @@ const MyProfile = () => {
                             </div>
                             <div>
                                 <Link href='/UserComment'><p className="font-bold text-gray-700 text-xl">{comments?.length}</p>
-                                    <p className="text-gray-600">Comments</p></Link>
+                                    <p className="text-gray-600">Customer Review</p></Link>
                             </div>
 
 
